@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "structured-sweetpea"
+version = "0.0.0"               # just a placeholder
+description = "SweetPea in JSON"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Younes Strittmatter", email = "ystrittm@gmail.com" }]
+dependencies = [
+  "sweetpea-py>=0.3",
+  "mate-strategy @ git+https://github.com/younesStrittmatter/mate-strategy"
+]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
