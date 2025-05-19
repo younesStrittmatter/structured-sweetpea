@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import List, Union
 from mate_strategy.schema import Schema, AnnotatedSchema
-from src.mate_structure.sweetpea.schema.level import LevelSchema, WindowDerivedLevelSchema, WithinDerivedLevelSchema
+from mate_structure.sweetpea.schema.level import LevelSchema, WindowDerivedLevelSchema, WithinDerivedLevelSchema
 
 
 @dataclass
