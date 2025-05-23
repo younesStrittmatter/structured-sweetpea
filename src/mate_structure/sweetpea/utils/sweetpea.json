@@ -1,0 +1,105 @@
+{
+  "factors": [
+    {
+      "name": "color",
+      "levels": [
+        {
+          "name": "blue"
+        },
+        {
+          "name": "red"
+        },
+        {
+          "name": "yellow"
+        },
+        {
+          "name": "green"
+        }
+      ]
+    },
+    {
+      "name": "location",
+      "levels": [
+        {
+          "name": "above"
+        },
+        {
+          "name": "below"
+        }
+      ]
+    },
+    {
+      "name": "color_repetition",
+      "levels": [
+        {
+          "name": "repeat",
+          "expr": "color[0]==color[-1]"
+        },
+        {
+          "name": "change",
+          "expr": "color[0]!=color[-1]"
+        }
+      ]
+    },
+    {
+      "name": "location_repetition",
+      "levels": [
+        {
+          "name": "repeat",
+          "expr": "location[0]==location[-1]"
+        },
+        {
+          "name": "change",
+          "expr": "location[0]!=location[-1]"
+        }
+      ]
+    },
+    {
+      "name": "relational_congruency",
+      "levels": [
+        {
+          "name": "congruent",
+          "expr": "(color_repetition=='repeat' and location_repetition=='repeat') or (color_repetition=='change' and location_repetition=='change')"
+        },
+        {
+          "name": "incongruent",
+          "expr": "(color_repetition=='repeat' and location_repetition=='change') or (color_repetition=='change' and location_repetition=='repeat')"
+        }
+      ]
+    },
+    {
+      "name": "relational_congruency_transition",
+      "levels": [
+        {
+          "name": "congruent_to_congruent",
+          "expr": "relational_congruency[-1]=='congruent' and relational_congruency[0]=='congruent'"
+        },
+        {
+          "name": "congruent_to_incongruent",
+          "expr": "relational_congruency[-1]=='congruent' and relational_congruency[0]=='incongruent'"
+        },
+        {
+          "name": "incongruent_to_congruent",
+          "expr": "relational_congruency[-1]=='incongruent' and relational_congruency[0]=='congruent'"
+        },
+        {
+          "name": "incongruent_to_incongruent",
+          "expr": "relational_congruency[-1]=='incongruent' and relational_congruency[0]=='incongruent'"
+        }
+      ]
+    }
+  ],
+  "crossing": [
+    [
+      "color",
+      "location"
+    ],
+    [
+      "color_repetition",
+      "location_repetition"
+    ],
+    [
+      "relational_congruency_transition"
+    ]
+  ]
+}

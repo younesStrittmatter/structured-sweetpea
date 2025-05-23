@@ -38,7 +38,7 @@ class ExperimentSchema(AnnotatedSchema):
                 "name": "word",
                 "levels": [
                     {"name": "red"},
-                    {"name": "green"},
+                    {"name": "green", "weight": 2},
                     {"name": "blue"}
                 ]
             },
@@ -47,21 +47,21 @@ class ExperimentSchema(AnnotatedSchema):
                 "levels": [
                     {"name": "congruent", "expr": "color==word and color!='grey'"},
                     {"name": "incongruent", "expr": "color!=word and color!='grey'"},
-                    {"name": "neutral", "expr": "color=='grey'"},
+                    {"name": "neutral", "expr": "color=='grey'", "weight": 3},
                 ]
             },
             {
                 "name": "congruency_transition",
                 "levels": [
-                    {"name": "cc", "expr": "congruency[-1]=='congruent' and congruency[0]=='congruent'"},
-                    {"name": "ci", "expr": "congruency[-1]=='congruent' and congruency[0]=='incongruent'"},
-                    {"name": "cn", "expr": "congruency[-1]=='congruent' and congruency[0]=='neutral'"},
+                    {"name": "cc", "expr": "congruency[-1]=='congruent' and congruency[0]=='congruent'", "weight": 2},
+                    {"name": "ci", "expr": "congruency[-1]=='congruent' and congruency[0]=='incongruent'", "weight": 2},
+                    {"name": "cn", "expr": "congruency[-1]=='congruent' and congruency[0]=='neutral'", "weight": 2},
                     {"name": "ic", "expr": "congruency[-1]=='incongruent' and congruency[0]=='congruent'"},
                     {"name": "ii", "expr": "congruency[-1]=='incongruent' and congruency[0]=='incongruent'"},
                     {"name": "in", "expr": "congruency[-1]=='incongruent' and congruency[0]=='neutral'"},
                     {"name": "nc", "expr": "congruency[-1]=='neutral' and congruency[0]=='congruent'"},
                     {"name": "ni", "expr": "congruency[-1]=='neutral' and congruency[0]=='incongruent'"},
-                    {"name": "nn", "expr": "congruency[-1]=='neutral' and congruency[0]=='neutral'"},
+                    {"name": "nn", "expr": "congruency[-1]=='neutral' and congruency[0]=='neutral'", "weight": 3},
                 ]
 
             }
