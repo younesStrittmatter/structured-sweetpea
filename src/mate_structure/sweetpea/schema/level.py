@@ -18,21 +18,21 @@ class LevelSchema(AnnotatedSchema):
 
     Examples:
         >>> print(LevelSchema.prompt()) # doctest: +NORMALIZE_WHITESPACE
-        Fill in **valid JSON** for the fields below. – **A single `level` of a `factor` within a factorial experimental design.**
+        Fill in **valid JSON** for the fields below. – **A static `level` of a `factor`.**
         <BLANKLINE>
         Rules
-        - name  – The concrete value used in the experiment (e.g., "red" for a color `factor`).
+        - name  – Concrete value used in the experiment (e.g., "red" for a color `factor`)
           • string
             (ex: "example")
-        - weight  – Sampling weight (default is 1).
+        - weight  – Sampling weight (default is 1)
           • (Optional) Key can be *missing* or:
-            - integer
+            - integer (>= 1)
             - None
         <BLANKLINE>
-        Example:
+        Example 1:
         {
           "name": "example",
-          "weight": 42
+          "weight": 3
         }
         <BLANKLINE>
         Return **only** the JSON object — no code-fences, no comments.
